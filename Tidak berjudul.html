@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ily</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h2>kamu bosen sama aku gaa?</h2>
+
+        <textarea id="jawaban" placeholder="Tulis jawaban kamu di sini..."></textarea>
+
+        <button onclick="cekJawaban()">Kirim Jawaban</button>
+
+        <p id="hasil"></p>
+    </div>
+
+    <script>
+        function cekJawaban() {
+            let jawaban = document.getElementById("jawaban").value.toLowerCase().trim();
+            let hasil = document.getElementById("hasil");
+
+            let kataCinta = [
+                "enga",
+                "ga",
+                "sayang",
+                "cinta",
+                "kasih",
+                "i love you"
+            ];
+
+            let benar = kataCinta.some(kata => jawaban.includes(kata));
+
+            if (benar) {
+                hasil.innerHTML = "I LOVEEEEE YOUUUUUUUU ";
+            } else {
+                hasil.innerHTML = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
